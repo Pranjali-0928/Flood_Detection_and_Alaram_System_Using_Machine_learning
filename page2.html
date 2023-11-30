@@ -1,0 +1,86 @@
+<html>  
+<head>  
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <script>
+      function openWin1() {
+        window.open("http://127.0.0.1:5000/Reg");
+      }
+      function openWin2() {
+        window.open("http://127.0.0.1:5000/Knn");
+      }
+      function openWin3() {
+        window.open("http://127.0.0.1:5000/Random");
+      }
+      function openWin4() {
+        window.open("http://127.0.0.1:5000/svm");
+      }
+      </script>
+<title>success</title>  
+<style>
+    body
+		{
+			background-image: url({{ url_for ('static', filename = 'input3.jpg') }});
+            /* background-repeat: no-repeat;
+            background-size: auto; */
+                       
+		}
+    .form {
+			
+			width: 700px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+    .form h1
+    {
+        width: 95%;
+        background-color: rgb(186, 235, 235);
+		text-align: center;
+		color: #1f1c1c;
+		font-size: 24px;
+		padding: 20px 0 20px 0;
+    }
+    .form p{
+        width: 95%;
+        background-color: rgb(186, 235, 235);
+		text-align: center;
+		color: #1f1c1c;
+		font-size: 24px;
+		padding: 20px 0 20px 0;
+          }
+    .form table{
+        background-color: aliceblue;
+    }      
+    .form table th td{
+      
+      border: 1px solid black;
+      padding: 50px;
+      
+      }
+     /* .form th td{
+        padding: 50px;
+        background-color: azure;
+          
+      }       */
+</style>
+</head>  
+<body>  
+ <div class="form">  
+<h1>Flood Prediction</h1>  
+<p>Regression Score: {{d1}}%</p>
+<p>KNN Score: {{d2}}%</p>
+<p>RandomForest Score: {{d3}}%</p>
+<p>SVM Score: {{d4}}%</p>
+
+<form>
+  <input type="button" value="Predict with Regression " onclick="openWin1()">
+  <input type="button" value="Predict with KNN " onclick="openWin2()">
+  <input type="button" value="Predict with RandomForest" onclick="openWin3()">
+  <input type="button" value="Predict with SVM " onclick="openWin4()">
+  
+</form>
+ </div>
+ </body>  
+</html>
+
